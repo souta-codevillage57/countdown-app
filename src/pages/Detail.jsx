@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import baseUrl from "../apis/baseUrl";
 
@@ -8,7 +8,7 @@ const Detail = () => {
 
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
-  const event_id = 123456789;
+  const event_id = useParams();
 
   useEffect(() => {
     const getPosts = async () => {
